@@ -210,6 +210,15 @@
 
       <?php foreach ($totals as $total) { ?>
 
+        <?php if ($total['title'] === 'Livrare in Europa'): ?>
+          <?php $total['text'] = 'Se va comunica ulterior'; ?>
+          <?php $europeflag = 1; ?>
+        <?php endif; ?>
+
+        <?php if ($total['title'] === 'Total' && $europeflag === 1): ?>
+          <?php $total['text'] = 'Se va comunica ulterior'; ?>
+        <?php endif; ?>
+
       <tr>
 
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;" colspan="4"><b><?php echo $total['title']; ?>:</b></td>
